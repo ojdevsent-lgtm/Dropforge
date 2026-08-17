@@ -1,11 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#111111" />
-    <meta name="description" content="DropForge — a modern dropshipping storefront." />
-    <title>DropForge — Shop smarter</title>
-  </head>
-  <body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
-</html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="DropForge — premium everyday products, transparent pricing and reliable delivery.">
+<title>DropForge — Premium Everyday Commerce</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html">DROP<span>FORGE</span></a><nav><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#deals">Deals</a><a href="checkout.html">Checkout</a></nav><button class="cart-button" data-cart-open>Cart <b data-cart-count>0</b></button><button class="menu" data-menu>☰</button></div></header>
+<div class="announcement">FREE SHIPPING OVER $50 <span>•</span> 30-DAY RETURNS <span>•</span> CURATED WEEKLY</div>
+<main>
+<section class="hero container"><div class="hero-copy"><p class="eyebrow">THE NEW STANDARD FOR ONLINE SHOPPING</p><h1>Products worth <i>discovering.</i></h1><p>DropForge brings useful, design-led products together with honest pricing and a checkout experience built for trust.</p><div class="hero-actions"><a class="button primary" href="#shop">Explore collection →</a><a href="#why">Why DropForge</a></div><div class="proof"><span>★★★★★ <b>4.8/5</b></span><span>✓ Secure checkout</span><span>✓ Tracked delivery</span></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=85" alt="Premium shopping products"><div><small>FEATURED DROP</small><strong>Smart essentials</strong><b>Save up to 40%</b></div></div></section>
+<section id="categories" class="container section"><div class="section-title"><div><p class="eyebrow">SHOP BY NEED</p><h2>Curated categories.</h2></div></div><div class="category-grid"><a href="shop.html?category=Tech"><strong>Tech</strong><span>Smart tools →</span></a><a href="shop.html?category=Home"><strong>Home</strong><span>Everyday upgrades →</span></a><a href="shop.html?category=Fashion"><strong>Fashion</strong><span>Easy essentials →</span></a></div></section>
+<section id="shop" class="container section"><div class="section-title"><div><p class="eyebrow">THE COLLECTION</p><h2>Best sellers.</h2></div><a href="shop.html">View all →</a></div><div class="product-grid" data-products></div></section>
+<section id="deals" class="deal container"><div><p class="eyebrow">WELCOME OFFER</p><h2>20% off your first order.</h2><p>Use <b>FORGE20</b> at checkout. No account required.</p><a class="button light" href="shop.html">Shop the offer →</a></div><strong>20<span>%</span></strong></section>
+<section id="why" class="container section"><div class="center"><p class="eyebrow">THE DROP FORGE STANDARD</p><h2>Enterprise-grade thinking.<br>Simple customer experience.</h2></div><div class="standards"><article><b>01</b><h3>Transparent</h3><p>Clear prices, shipping expectations and order status.</p></article><article><b>02</b><h3>Reliable</h3><p>Built around resilient storefront patterns and graceful fallbacks.</p></article><article><b>03</b><h3>Scalable</h3><p>A clean foundation ready for payments, suppliers and a secure backend.</p></article></div></section>
+</main>
+<footer><div class="container footer-grid"><div><a class="brand" href="index.html">DROP<span>FORGE</span></a><p>Useful finds. Better prices. Built to scale.</p></div><div><b>Explore</b><a href="shop.html">Shop</a><a href="#categories">Categories</a><a href="#deals">Deals</a></div><div><b>Support</b><a href="checkout.html">Checkout</a><a href="admin.html">Admin</a><a href="#">Contact</a></div><div><b>Stay informed</b><p>New drops and private offers, occasionally.</p><form data-newsletter><input type="email" required placeholder="Email address"><button>→</button></form></div></div><div class="container copyright">© 2026 DropForge. All rights reserved.</div></footer>
+<div class="drawer-backdrop" data-cart-close></div><aside class="cart-drawer"><div class="drawer-head"><h2>Your cart</h2><button data-cart-close>×</button></div><div data-cart-items></div><div class="drawer-total"><span>Total</span><strong data-cart-total>$0.00</strong></div><a class="button primary full" href="checkout.html">Checkout →</a></aside>
+<script src="js/products.js"></script><script src="js/store.js"></script><script src="js/home.js"></script>
+</body></html>
