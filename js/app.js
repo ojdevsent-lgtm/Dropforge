@@ -1,0 +1,11 @@
+const DF={products:window.DROPFORGE_PRODUCTS||[],store:window.DropForgeStore};
+DF.money=n=>`$${Number(n).toFixed(2)}`;
+DF.get=id=>DF.products.find(p=>p.id===id);
+DF.cartItems=()=>DF.store.cart().map(i=>({...i,product:DF.get(i.id)})).filter(i=>i.product);
+DF.count=()=>DF.cartItems().reduce((n,i)=>n+i.qty,0);
+DF.total=()=>DF.cartItems().reduce((n,i)=>n+i.qty*i.product.price,0);
+DF.updateCartUI=()=>{document.querySelectorAll('[data-cart-count]').forEach(e=>e.textContent=DF.count());document.querySelectorAll('[data-cart-total]').forEach(e=>e.textContent=DF.money(DF.total()));const list=document.querySelector('[data-cart-items]');if(list){const items=DF.cartItems();list.innerHTML=items.length?items.map(i=>`<article class="cart-line"><img src="${i.product.image}" alt=""><div><b>${i.product.name}</b><small>${DF.money(i.product.price)} · Qty ${i.qty}</small><button data-remove="${i.id}">Remove</button></div></article>`).join(''):`<div class="empty-state"><span>◎</span><h3>Your bag is empty</h3><p>Find something worth bringing home.</p><a class="btn btn-dark" href="shop.html">Explore products</a></div>`}};
+DF.openCart=()=>{document.querySelector('[data-cart-drawer]')?.classList.add('is-open');document.querySelector('[data-cart-backdrop]')?.classList.add('is-open');DF.updateCartUI()};
+DF.closeCart=()=>{document.querySelector('[data-cart-drawer]')?.classList.remove('is-open');document.querySelector('[data-cart-backdrop]')?.classList.remove('is-open')};
+document.addEventListener('click',e=>{const add=e.target.closest('[data-add]');if(add){DF.store.add(add.dataset.add);DF.openCart()}const rem=e.target.closest('[data-remove]');if(rem){DF.store.remove(rem.dataset.remove);DF.updateCartUI()}if(e.target.closest('[data-cart-open]'))DF.openCart();if(e.target.closest('[data-cart-close]'))DF.closeCart()});
+document.addEventListener('DOMContentLoaded',()=>DF.updateCartUI());
